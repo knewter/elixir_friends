@@ -12,7 +12,7 @@ config :logger, level: :warn
 # Configure your database
 config :elixir_friends, ElixirFriends.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("DATABASE_POSTGRESQL_USERNAME") || "postgres",
+  password: System.get_env("DATABASE_POSTGRESQL_PASSWORD") || "postgres",
   database: "elixir_friends_test",
   size: 1 # Use a single connection for transactional tests
