@@ -11,5 +11,5 @@ config :elixir_friends, ElixirFriends.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "elixir_friends_prod",
+  database: System.get_env("DATABASE_URL"),
   size: 20 # The amount of database connections in the pool
