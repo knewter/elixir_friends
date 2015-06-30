@@ -9,4 +9,4 @@ config :elixir_friends, ElixirFriends.Endpoint,
 # Configure your database
 config :elixir_friends, ElixirFriends.Repo,
   adapter: Ecto.Adapters.Postgres,
-  database: System.get_env("DATABASE_URL")
+  url: System.get_env("DATABASE_URL")
