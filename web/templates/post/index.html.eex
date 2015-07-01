@@ -3,6 +3,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Image</th>
       <th>ImageUrl</th>
       <th>Content</th>
       <th>SourceUrl</th>
@@ -13,6 +14,7 @@
   <tbody>
 <%= for post <- @posts do %>
     <tr>
+      <td><img src='<%= post.image_url %>' /></td>
       <td><%= post.image_url %></td>
       <td><%= post.content %></td>
       <td><%= post.source_url %></td>
