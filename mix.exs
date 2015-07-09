@@ -38,6 +38,7 @@ defmodule ElixirFriends.Mixfile do
       {:cowboy, "~> 1.0"},
       {:extwitter, "~> 0.4"},
       {:oauth, github: "tim/erlang-oauth"},
+      {:scrivener, "~> 0.9.0"}
     ]
   end
 end
