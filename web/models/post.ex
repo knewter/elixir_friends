@@ -5,6 +5,7 @@ defmodule ElixirFriends.Post do
     field :image_url, :string
     field :content, :string
     field :source_url, :string
+    field :username, :string
 
     timestamps
   end

@@ -1,6 +1,5 @@
 {
-  "repository": {
-  },
+  "repository": {},
   "dependencies": {
     "brunch": "^1.8.1",
     "babel-brunch": "^5.1.1",
@@ -8,6 +7,7 @@
     "css-brunch": ">= 1.0 < 1.8",
     "javascript-brunch": ">= 1.0 < 1.8",
     "sass-brunch": "^1.8.10",
-    "uglify-js-brunch": ">= 1.0 < 1.8"
+    "uglify-js-brunch": ">= 1.0 < 1.8",
+    "semantic-ui": "~2.0.2"
   }
 }

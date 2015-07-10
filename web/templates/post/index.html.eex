@@ -1,32 +1,26 @@
-<h2>Listing posts</h2>
+<h2>Look at all these people!  They came together because of <%= link "Elixir!", to: "http://www.elixir-lang.org" %></h2>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>ImageUrl</th>
-      <th>Content</th>
-      <th>SourceUrl</th>
-
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for post <- @posts_page.entries do %>
-    <tr>
-      <td><img src='<%= post.image_url %>' /></td>
-      <td><%= post.image_url %></td>
-      <td><%= post.content %></td>
-      <td><%= post.source_url %></td>
-
-      <td class="text-right">
-        <%= link "Show", to: post_path(@conn, :show, post), class: "btn btn-default btn-xs" %>
-        <%= link "Edit", to: post_path(@conn, :edit, post), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: post_path(@conn, :delete, post), method: :delete, class: "btn btn-danger btn-xs" %>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
+<%= pagination_links(@posts_page) %>
+<div class="ui grid">
+  <%= for post <- @posts_page.entries do %>
+    <div class="four wide column">
+      <div class="ui card">
+        <div class="image">
+          <img src='<%= post.image_url %>' />
+        </div>
+        <div class="content">
+          <div class="header">
+            <%= post.username %>
+          </div>
+          <div class="meta">
+            <span class="date"><%= post.inserted_at %></span>
+          </div>
+          <div class="description">
+            <%= post.content %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 <%= pagination_links(@posts_page) %>
