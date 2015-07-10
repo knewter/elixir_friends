@@ -1,7 +1,7 @@
 <h2>Look at all these people!  They came together because of <%= link "Elixir!", to: "http://www.elixir-lang.org" %></h2>
 
 <%= pagination_links(@posts_page) %>
-<div class="ui grid">
+<div class="ui grid stackable">
   <%= for post <- @posts_page.entries do %>
     <div class="four wide column">
       <div class="ui card">
