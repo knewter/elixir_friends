@@ -20,7 +20,9 @@ defmodule ElixirFriends.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", ElixirFriends do
-  #   pipe_through :api
-  # end
+  scope "/api", ElixirFriends do
+    pipe_through :api
+
+    resources "/posts", API.PostController, only: [:index]
+  end
 end
