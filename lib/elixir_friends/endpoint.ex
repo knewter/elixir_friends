@@ -31,5 +31,5 @@ defmodule ElixirFriends.Endpoint do
     key: "_elixir_friends_key",
     signing_salt: "SYF3qQNg"
 
-  plug :router, ElixirFriends.Router
+  plug ElixirFriends.Router
 end

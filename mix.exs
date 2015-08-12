@@ -30,15 +30,15 @@ defmodule ElixirFriends.Mixfile do
   # Type `mix help deps` for examples and options
   defp deps do
     [
-      {:phoenix, "~> 0.13.1"},
-      {:phoenix_ecto, "~> 0.4"},
+      {:phoenix, "~> 0.16.1"},
+      {:phoenix_ecto, "~> 1.0.0"},
       {:postgrex, ">= 0.0.0"},
-      {:phoenix_html, "~> 1.0"},
-      {:phoenix_live_reload, "~> 0.4", only: :dev},
+      {:phoenix_html, "~> 2.1.0"},
+      {:phoenix_live_reload, "~> 0.6.0", only: :dev},
       {:cowboy, "~> 1.0"},
       {:extwitter, "~> 0.4"},
       {:oauth, github: "tim/erlang-oauth"},
-      {:scrivener, "~> 0.9.0"}
+      {:scrivener, "~> 0.12.0"}
     ]
   end
 end

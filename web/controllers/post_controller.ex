@@ -5,7 +5,6 @@ defmodule ElixirFriends.PostController do
   alias ElixirFriends.Post
 
   plug :scrub_params, "post" when action in [:create, :update]
-  plug :action
 
   def index(conn, params) do
     posts_page = Post

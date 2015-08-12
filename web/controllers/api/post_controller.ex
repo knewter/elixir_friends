@@ -4,8 +4,6 @@ defmodule ElixirFriends.API.PostController do
 
   alias ElixirFriends.Post
 
-  plug :action
-
   def index(conn, params) do
     posts_page = Post
     |> order_by([p], desc: p.inserted_at)
