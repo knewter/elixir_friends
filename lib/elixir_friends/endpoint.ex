@@ -32,4 +32,6 @@ defmodule ElixirFriends.Endpoint do
     signing_salt: "SYF3qQNg"
 
   plug ElixirFriends.Router
+
+  socket "/socket", ElixirFriends.UserSocket
 end

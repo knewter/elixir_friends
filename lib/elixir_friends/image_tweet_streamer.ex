@@ -20,6 +20,7 @@ defmodule ElixirFriends.ImageTweetStreamer do
     }
     IO.puts "storing this post: #{inspect post}"
     ElixirFriends.Repo.insert(post)
+    ElixirFriends.Endpoint.broadcast! "posts:new", "new:post", post
   end
 
   defp photos(%ExTwitter.Model.Tweet{}=tweet) do
