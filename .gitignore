@@ -22,4 +22,6 @@ erl_crash.dump
 # secrets file as long as you replace its contents by environment
 # variables.
 # /config/prod.secret.exs
-bower_components
+#
+# Putting bower_components in here just because I don't want to deal with buildpacks now, sorry future-me
+# bower_components
