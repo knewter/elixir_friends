@@ -1,4 +1,5 @@
 import {Socket} from "deps/phoenix/web/static/js/phoenix"
+import {React} from "react"
 
 let App = {
 }

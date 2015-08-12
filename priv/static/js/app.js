@@ -32161,9 +32161,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _depsPhoenixWebStaticJsPhoenix = require("deps/phoenix/web/static/js/phoenix");
 
+var _react = require("react");
+
 var App = {};
 
-var PostList = React.createClass({
+var PostList = _react.React.createClass({
   displayName: "PostList",
 
   getInitialState: function getInitialState() {
@@ -32201,49 +32203,49 @@ var PostList = React.createClass({
     });
   },
   render: function render() {
-    return React.createElement(
+    return _react.React.createElement(
       "div",
       { className: "ui grid stackable" },
       this.state.posts.map(function (post) {
-        return React.createElement(Post, { imageUrl: post.image_url, username: post.username, insertedAt: post.inserted_at, content: post.content });
+        return _react.React.createElement(Post, { imageUrl: post.image_url, username: post.username, insertedAt: post.inserted_at, content: post.content });
       })
     );
   }
 });
 
-var Post = React.createClass({
+var Post = _react.React.createClass({
   displayName: "Post",
 
   render: function render() {
-    return React.createElement(
+    return _react.React.createElement(
       "div",
       { className: "four wide column" },
-      React.createElement(
+      _react.React.createElement(
         "div",
         { className: "ui card" },
-        React.createElement(
+        _react.React.createElement(
           "div",
           { className: "image" },
-          React.createElement("img", { src: this.props.imageUrl })
+          _react.React.createElement("img", { src: this.props.imageUrl })
         ),
-        React.createElement(
+        _react.React.createElement(
           "div",
           { className: "content" },
-          React.createElement(
+          _react.React.createElement(
             "div",
             { className: "header" },
             this.props.username
           ),
-          React.createElement(
+          _react.React.createElement(
             "div",
             { className: "meta" },
-            React.createElement(
+            _react.React.createElement(
               "span",
               { className: "date" },
               this.props.insertedAt
             )
           ),
-          React.createElement(
+          _react.React.createElement(
             "div",
             { className: "description" },
             this.props.content
@@ -32256,7 +32258,7 @@ var Post = React.createClass({
 
 window.onload = function () {
   var element = document.getElementById("app");
-  React.render(React.createElement(PostList, { source: "/api/posts" }), element);
+  _react.React.render(_react.React.createElement(PostList, { source: "/api/posts" }), element);
 };
 
 exports["default"] = App;
