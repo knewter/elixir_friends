@@ -1,8 +1,12 @@
 defmodule ElixirFriends.ImageTweetStreamer do
+  import Ecto.Query, only: [from: 2]
+  alias ElixirFriends.Post
+  alias ElixirFriends.Repo
+
   def stream(search_term) do
     ExTwitter.stream_filter(track: search_term)
     |> Stream.filter(&has_images?/1)
-    |> Stream.map(&store_tweet/1)
+    |> Stream.map(&conditionally_store_tweet/1)
   end
 
   defp has_images?(%ExTwitter.Model.Tweet{}=tweet) do
@@ -10,16 +14,29 @@ defmodule ElixirFriends.ImageTweetStreamer do
     Enum.any?(photos(tweet))
   end
 
-  defp store_tweet(%ExTwitter.Model.Tweet{}=tweet) do
-    IO.puts "storing this tweet: #{inspect(tweet, pretty: true, limit: 2_000)}"
-    post = %ElixirFriends.Post{
+  defp conditionally_store_tweet(%ExTwitter.Model.Tweet{}=tweet) do
+    post = %Post{
       image_url: first_photo(tweet).media_url,
       content: tweet.text,
       source_url: first_photo(tweet).expanded_url,
       username: tweet.user.screen_name
     }
+    unless post_exists?(post) do
+      store_post(post)
+    end
+  end
+
+  defp post_exists?(post) do
+    query = from p in Post,
+      where: p.image_url == ^post.image_url,
+      select: count(p.id)
+
+    Repo.one(query) > 0
+  end
+
+  defp store_post(%ElixirFriends.Post{}=post) do
     IO.puts "storing this post: #{inspect post}"
-    ElixirFriends.Repo.insert(post)
+    Repo.insert(post)
     ElixirFriends.Endpoint.broadcast! "posts:new", "new:post", post
   end
 
