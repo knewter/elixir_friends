@@ -31248,6 +31248,7 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var VSN = "1.0.0";
 var SOCKET_STATES = { connecting: 0, open: 1, closing: 2, closed: 3 };
 var CHANNEL_STATES = {
   closed: "closed",
@@ -31619,7 +31620,7 @@ var Socket = (function () {
   }, {
     key: "endPointURL",
     value: function endPointURL() {
-      var uri = Ajax.appendParams(this.endPoint, this.params);
+      var uri = Ajax.appendParams(Ajax.appendParams(this.endPoint, this.params), { vsn: VSN });
       if (uri.charAt(0) !== "/") {
         return uri;
       }
@@ -31883,10 +31884,7 @@ var LongPoll = (function () {
   }, {
     key: "endpointURL",
     value: function endpointURL() {
-      return Ajax.appendParams(this.pollEndpoint, {
-        token: this.token,
-        format: "json"
-      });
+      return Ajax.appendParams(this.pollEndpoint, { token: this.token });
     }
   }, {
     key: "closeAndRetry",

@@ -2,7 +2,7 @@ defmodule ElixirFriends do
   use Application
   import Supervisor.Spec
 
-  @term "elixirfriends"
+  @term "nintendo"
 
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
   # for more information on OTP Applications
