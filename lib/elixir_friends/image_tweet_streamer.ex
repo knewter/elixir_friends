@@ -34,7 +34,7 @@ defmodule ElixirFriends.ImageTweetStreamer do
     Repo.one(query) > 0
   end
 
-  defp store_post(%ElixirFriends.Post{}=post) do
+  def store_post(%ElixirFriends.Post{}=post) do
     IO.puts "storing this post: #{inspect post}"
     Repo.insert(post)
     ElixirFriends.Endpoint.broadcast! "posts:new", "new:post", post
