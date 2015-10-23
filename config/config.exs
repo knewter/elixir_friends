@@ -27,7 +27,7 @@ config :ex_twitter, :oauth, [
 ]
 
 config :honeybadger,
-  exclude_envs: [:test]
+  exclude_envs: [:test, :dev]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
