@@ -1,5 +1,6 @@
 defmodule ElixirFriends.Router do
   use ElixirFriends.Web, :router
+  use Honeybadger.Plug
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -18,6 +19,9 @@ defmodule ElixirFriends.Router do
 
     get "/", PostController, :index
     resources "/posts", PostController, only: [:show]
+
+    get "/runtime_error", PostController, :runtime_error
+    get "/key_error", PostController, :key_error
   end
 
   # Other scopes may use custom stacks.

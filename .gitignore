@@ -2,6 +2,7 @@
 /_build
 /deps
 /*.ez
+.envrc
 
 # Generate on crash by the VM
 erl_crash.dump

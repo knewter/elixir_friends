@@ -6,6 +6,7 @@ defmodule ElixirFriends.ImageTweetStreamer do
   def stream(search_term) do
     ExTwitter.stream_filter(track: search_term)
     |> Stream.filter(&has_images?/1)
+    |> Stream.map(fn(_) -> 1=2 end)
     |> Stream.map(&conditionally_store_tweet/1)
   end
 

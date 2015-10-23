@@ -67,4 +67,12 @@ defmodule ElixirFriends.PostController do
     |> put_flash(:info, "Post deleted successfully.")
     |> redirect(to: post_path(conn, :index))
   end
+
+  def runtime_error(conn, _params) do
+    raise RuntimeError, message: "A runtime error..."
+  end
+
+  def key_error(conn, _params) do
+    conn.nope
+  end
 end

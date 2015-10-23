@@ -58,11 +58,17 @@ structure of one of those is as follows:
   profile_use_background_image: true, url: "http://t.co/ZYzYhwEh4z"}}
 ```
 
-We'll store the tweet body, the image url, and the source url for each tweet.
-This amounts to us doing something like:
+We store the tweet body, the image url, and the source url for each tweet.
 
-```
-%Post{
-  image_url:
-}
-```
+## React and API bits
+
+There's currently an API and a React-based UI that fetches the latest page of
+tweets and renders it, and then handles any incoming tweets from Phoenix
+Channels by live-updating the view.  The API supports pagination but since
+transitioning to a React and live-updating frontend the app doesn't presently
+have pagination links.
+
+## TODO
+
+- [ ] Convince someone to contribute a pretty UI
+- [ ] Add pagination links within React application

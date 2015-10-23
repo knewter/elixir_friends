@@ -16,9 +16,18 @@ defmodule ElixirFriends.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [mod: {ElixirFriends, []},
-      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-        :phoenix_ecto, :postgrex]]
+    [
+      mod: {ElixirFriends, []},
+      applications: [
+        :phoenix,
+        :phoenix_html,
+        :cowboy,
+        :logger,
+        :phoenix_ecto,
+        :postgrex,
+        :honeybadger
+      ]
+    ]
   end
 
   # Specifies which paths to compile per environment
@@ -38,7 +47,8 @@ defmodule ElixirFriends.Mixfile do
       {:cowboy, "~> 1.0"},
       {:extwitter, "~> 0.4"},
       {:oauth, github: "tim/erlang-oauth"},
-      {:scrivener, "~> 0.12.0"}
+      {:scrivener, "~> 0.12.0"},
+      {:honeybadger, "~> 0.3"}
     ]
   end
 end
