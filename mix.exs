@@ -45,7 +45,7 @@ defmodule ElixirFriends.Mixfile do
       {:phoenix_html, "~> 2.1.0"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:cowboy, "~> 1.0"},
-      {:extwitter, "~> 0.4"},
+      {:extwitter, "~> 0.5.1"},
       {:oauth, github: "tim/erlang-oauth"},
       {:scrivener, "~> 0.12.0"},
       {:honeybadger, "~> 0.3"}
