@@ -32,4 +32,4 @@ config :elixir_friends, ElixirFriends.Repo,
   username: "postgres",
   password: "postgres",
   database: "elixir_friends_dev",
-  size: 10 # The amount of database connections in the pool
+  pool_size: 10 # The amount of database connections in the pool
