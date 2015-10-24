@@ -36,7 +36,7 @@ let PostList = React.createClass({
   },
   render() {
     return(
-      <div className="ui grid stackable">
+      <div className="post-list">
         {this.state.posts.map(function(post){
           return <Post imageUrl={post.image_url} username={post.username} insertedAt={post.inserted_at} content={post.content} />
         })}
@@ -48,22 +48,20 @@ let PostList = React.createClass({
 let Post = React.createClass({
   render() {
     return(
-      <div className="four wide column">
-        <div className="ui card">
-          <div className="image">
-            <img src={this.props.imageUrl} />
-          </div>
-          <div className="content">
-            <div className="header">
-              {this.props.username}
-            </div>
-            <div className="meta">
-              <span className="date">{this.props.insertedAt}</span>
-            </div>
-            <div className="description">
-              {this.props.content}
-            </div>
-          </div>
+      <div className="card">
+        <img className="card-image" src={this.props.imageUrl} />
+        <div className="card-content">
+          <h3 className="card-title">
+            {this.props.username}
+          </h3>
+          <p className="card-text">
+            {this.props.content}
+          </p>
+          <p className="card-date">
+            <span className="small">
+              {this.props.insertedAt}
+            </span>
+          </p>
         </div>
       </div>
     )

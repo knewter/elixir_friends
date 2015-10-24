@@ -1,0 +1,33 @@
+.card {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 20rem;
+  border: 1px solid #ddd;
+  border-bottom-width: 2px;
+  border-radius: 0.25rem;
+}
+
+.card-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.card-content {
+  padding: 1.25rem;
+  margin-top: 0;
+  background-color: #fff;
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.card-title {
+  margin-top: 0;
+}
+
+.card-text {
+  font-size: 0.9rem;
+}
