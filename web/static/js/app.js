@@ -1,7 +1,32 @@
 import {Socket} from "deps/phoenix/web/static/js/phoenix"
 
-let App = {
-}
+let App = React.createClass({
+  render() {
+    return (
+      <div>
+        <Header />
+        <PostList source="/api/posts" />
+      </div>
+    )
+  }
+})
+
+const Header = React.createClass({
+  render() {
+    return (
+      <header className="header">
+        <div className='header-container'>
+          <h1 className="header-title">
+            #ElixirFriends
+          </h1>
+          <h2 className="header-tagline">
+            Create and share together
+          </h2>
+        </div>
+      </header>
+    )
+  }
+})
 
 let PostList = React.createClass({
   getInitialState() {
@@ -51,26 +76,53 @@ let Post = React.createClass({
       <div className="card">
         <img className="card-image" src={this.props.imageUrl} />
         <div className="card-content">
-          <h3 className="card-title">
-            {this.props.username}
-          </h3>
           <p className="card-text">
             {this.props.content}
           </p>
-          <p className="card-date">
-            <span className="small">
-              {this.props.insertedAt}
-            </span>
-          </p>
+          <div className='card-meta'>
+            <TwitterHandle user={this.props.username} />
+            <span> - </span>
+            <PostedAt date={this.props.insertedAt} />
+          </div>
         </div>
       </div>
     )
   }
 })
 
+const TwitterHandle = React.createClass({
+  propTypes: {
+    user: React.PropTypes.string.isRequired
+  },
+
+  render() {
+    return (
+      <a href={`https://twitter.com/${this.props.user}`}>
+        @{this.props.user}
+      </a>
+    )
+  }
+})
+
+const PostedAt = React.createClass({
+  propTypes: {
+    date: React.PropTypes.string.isRequired
+  },
+
+  render() {
+    let timeSince = moment(this.props.date).fromNow()
+
+    return (
+      <span className="small">
+        {timeSince}
+      </span>
+    )
+  }
+})
+
 window.onload = () => {
   let element = document.getElementById("app")
-  React.render(<PostList source="/api/posts" />, element)
+  React.render(<App />, element)
 }
 
 export default App

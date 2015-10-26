@@ -1,9 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+
 html {
   font-family: $base-font-family;
   font-size: $base-font-size;
 
   @media (min-width: $screen-lg) {
-    font-size: calc($base-font-size * 1.1);
+    font-size: $base-font-size * 1.1;
   }
 }
 
@@ -32,8 +34,8 @@ blockquote { font-size: 1.5rem; }
 
 p {
   margin: 0 0 1.25rem;
-  font-size: 1rem;
-  font-weight: 200;
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 
 p + h1,
@@ -41,4 +43,7 @@ p + h2,
 p + h3,
 p + h4 { margin-top: 2rem; }
 
-a { text-decoration: none; }
+a {
+  color: $purple;
+  text-decoration: none;
+}

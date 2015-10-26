@@ -2,9 +2,11 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  max-width: 20rem;
-  border: 1px solid #ddd;
-  border-bottom-width: 2px;
+  max-width: 24rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  border: 1px solid rgba(221, 221, 221, 0.47);
+  border-bottom-width: 3px;
   border-radius: 0.25rem;
 }
 
@@ -24,10 +26,8 @@
   border-bottom-left-radius: 0.25rem;
 }
 
-.card-title {
-  margin-top: 0;
-}
-
-.card-text {
-  font-size: 0.9rem;
+.card-meta {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #8f8f8f;
 }

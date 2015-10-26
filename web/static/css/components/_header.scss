@@ -1,0 +1,41 @@
+.header {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  // background-color: $purple;
+  // border-bottom: 7px solid #640c73;
+  // border-bottom: 4px solid #5F0F7B;
+  background-color: #532171;
+  border-bottom: 6px solid #A683B3;
+
+  @media screen and (min-width: $screen-md) {
+    text-align: left;
+  }
+}
+
+.header-container {
+  max-width: $screen-xl;
+  padding-top: 2rem;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
+  padding-left: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media screen and (min-width: $screen-md) {
+    padding-top: 3rem;
+    padding-right: 2rem;
+    padding-bottom: 3rem;
+    padding-left: 2rem;
+  }
+}
+
+.header-title {
+  margin-top: 0;
+}
+
+.header-tagline {
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
