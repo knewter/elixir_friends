@@ -92,13 +92,13 @@ a {
   color: #fff;
   text-align: center;
   background-color: #532171;
-  border-bottom: 6px solid #A683B3; }
+  border-bottom: 6px solid #a683b3; }
   @media screen and (min-width: 27rem) {
     /* line 1, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
     .header {
       text-align: left; } }
 
-/* line 16, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
+/* line 13, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
 .header-container {
   max-width: 60rem;
   padding-top: 2rem;
@@ -108,18 +108,18 @@ a {
   margin-right: auto;
   margin-left: auto; }
   @media screen and (min-width: 27rem) {
-    /* line 16, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
+    /* line 13, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
     .header-container {
       padding-top: 3rem;
       padding-right: 2rem;
       padding-bottom: 3rem;
       padding-left: 2rem; } }
 
-/* line 33, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
+/* line 30, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
 .header-title {
   margin-top: 0; }
 
-/* line 37, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
+/* line 34, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
 .header-tagline {
   margin-top: 0;
   font-size: 1.5rem;

@@ -2,11 +2,8 @@
   width: 100%;
   color: #fff;
   text-align: center;
-  // background-color: $purple;
-  // border-bottom: 7px solid #640c73;
-  // border-bottom: 4px solid #5F0F7B;
-  background-color: #532171;
-  border-bottom: 6px solid #A683B3;
+  background-color: $dark-purple;
+  border-bottom: 6px solid $light-purple;
 
   @media screen and (min-width: $screen-md) {
     text-align: left;
