@@ -1,7 +1,6 @@
 /* Breaks */
 /* Colors */
 /* Typography */
-/* Links */
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
 /* line 1, /Users/keathley/Development/elixir_friends/web/static/css/base/_sizing.scss */
 html {
@@ -84,8 +83,13 @@ p + h4 {
 
 /* line 46, /Users/keathley/Development/elixir_friends/web/static/css/base/_fonts.scss */
 a {
+  padding-bottom: 0.2rem;
   color: #8849ae;
-  text-decoration: none; }
+  text-decoration: none;
+  transition: color 0.1s ease; }
+  /* line 52, /Users/keathley/Development/elixir_friends/web/static/css/base/_fonts.scss */
+  a:hover {
+    color: #6c3a8a; }
 
 /* line 1, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
 .header {
@@ -125,6 +129,30 @@ a {
   font-size: 1.5rem;
   font-weight: 300;
   color: #d5dae6; }
+
+/* line 1, /Users/keathley/Development/elixir_friends/web/static/css/components/_footer.scss */
+.footer {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #d5dae6;
+  background-color: #3c3752;
+  text-align: center;
+  padding: 4rem;
+  margin-top: 5rem;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  /* line 10, /Users/keathley/Development/elixir_friends/web/static/css/components/_footer.scss */
+  .footer p {
+    font-size: 1.1rem;
+    font-weight: 400; }
+  /* line 15, /Users/keathley/Development/elixir_friends/web/static/css/components/_footer.scss */
+  .footer a {
+    color: #bcb7ff; }
+    /* line 18, /Users/keathley/Development/elixir_friends/web/static/css/components/_footer.scss */
+    .footer a:hover {
+      color: #f4f8ff; }
 
 /* line 1, /Users/keathley/Development/elixir_friends/web/static/css/components/_post_list.scss */
 .post-list {

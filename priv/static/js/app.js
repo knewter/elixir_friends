@@ -109,6 +109,54 @@
   require._cache = cache;
   globals.require = require;
 })();
+/*!
+  Copyright (c) 2015 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = ({}).hasOwnProperty;
+
+	function classNames() {
+		var classes = '';
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes += ' ' + arg;
+			} else if (Array.isArray(arg)) {
+				classes += ' ' + classNames.apply(null, arg);
+			} else if (argType === 'object') {
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes += ' ' + key;
+					}
+				}
+			}
+		}
+
+		return classes.substr(1);
+	}
+
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = classNames;
+	} else if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
+		// register as 'classnames', consistent with npm package name
+		define('classnames', function () {
+			return classNames;
+		});
+	} else {
+		window.classNames = classNames;
+	}
+})();
 //! moment.js
 //! version : 2.10.6
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
@@ -17492,7 +17540,8 @@ var App = React.createClass({
       "div",
       null,
       React.createElement(Header, null),
-      React.createElement(PostList, { source: "/api/posts" })
+      React.createElement(PostList, { source: "/api/posts" }),
+      React.createElement(Footer, null)
     );
   }
 });
@@ -17516,6 +17565,37 @@ var Header = React.createClass({
           "h2",
           { className: "header-tagline" },
           "Create and share together."
+        )
+      )
+    );
+  }
+});
+
+var Footer = React.createClass({
+  displayName: "Footer",
+
+  render: function render() {
+    return React.createElement(
+      "footer",
+      { className: "footer" },
+      React.createElement(
+        "p",
+        null,
+        "Made by ",
+        React.createElement(TwitterLink, { username: "knewter" }),
+        " and ",
+        React.createElement(TwitterLink, { username: "ChrisKeathley" }),
+        ".",
+        React.createElement(
+          "span",
+          null,
+          " "
+        ),
+        "Comments, Pull Requests, and Issues are welcome on ",
+        React.createElement(
+          "a",
+          { href: "https://github.com/knewter/elixir_friends" },
+          "Github."
         )
       )
     );
@@ -17580,7 +17660,7 @@ var Post = React.createClass({
       React.createElement(
         "div",
         { className: "card-meta" },
-        React.createElement(TwitterHandle, { user: this.props.username }),
+        React.createElement(TwitterLink, { username: this.props.username }),
         React.createElement(PostedAt, { date: this.props.insertedAt })
       ),
       React.createElement("img", { className: "card-image", src: this.props.imageUrl }),
@@ -17597,19 +17677,24 @@ var Post = React.createClass({
   }
 });
 
-var TwitterHandle = React.createClass({
-  displayName: "TwitterHandle",
+var TwitterLink = React.createClass({
+  displayName: "TwitterLink",
 
   propTypes: {
-    user: React.PropTypes.string.isRequired
+    username: React.PropTypes.string.isRequired
   },
 
   render: function render() {
+    var props = this.props,
+        className = classNames(props.className, 'twitter-handle'),
+        username = props.username,
+        link = "https://twitter.com/" + username;
+
     return React.createElement(
       "a",
-      { className: "card-owner", href: "https://twitter.com/" + this.props.user },
+      { className: className, href: link },
       "@",
-      this.props.user
+      this.props.username
     );
   }
 });

@@ -1,0 +1,22 @@
+.footer {
+  display: flex;
+  color: $light-gray;
+  background-color: $dark-purple;
+  text-align: center;
+  padding: 4rem;
+  margin-top: 5rem;
+  justify-content: center;
+
+  p {
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+
+  a {
+    color: #bcb7ff;
+
+    &:hover {
+      color: #f4f8ff;
+    }
+  }
+}

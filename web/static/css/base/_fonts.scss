@@ -44,6 +44,12 @@ p + h3,
 p + h4 { margin-top: 2rem; }
 
 a {
+  padding-bottom: 0.2rem;
   color: $purple;
   text-decoration: none;
+  transition: color 0.1s ease;
+
+  &:hover {
+    color: darken($purple, 10);
+  }
 }

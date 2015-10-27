@@ -6,6 +6,7 @@ let App = React.createClass({
       <div>
         <Header />
         <PostList source="/api/posts" />
+        <Footer />
       </div>
     )
   }
@@ -24,6 +25,20 @@ const Header = React.createClass({
           </h2>
         </div>
       </header>
+    )
+  }
+})
+
+const Footer = React.createClass({
+  render() {
+    return (
+      <footer className="footer">
+        <p>
+          Made by <TwitterLink username='knewter' /> and <TwitterLink username='ChrisKeathley' />.
+          <span> </span>
+          Comments, Pull Requests, and Issues are welcome on <a href="https://github.com/knewter/elixir_friends">Github.</a>
+        </p>
+      </footer>
     )
   }
 })
@@ -75,7 +90,7 @@ let Post = React.createClass({
     return(
       <div className="card">
         <div className='card-meta'>
-          <TwitterHandle user={this.props.username} />
+          <TwitterLink username={this.props.username} />
           <PostedAt date={this.props.insertedAt} />
         </div>
         <img className="card-image" src={this.props.imageUrl} />
@@ -89,15 +104,20 @@ let Post = React.createClass({
   }
 })
 
-const TwitterHandle = React.createClass({
+const TwitterLink = React.createClass({
   propTypes: {
-    user: React.PropTypes.string.isRequired
+    username: React.PropTypes.string.isRequired
   },
 
   render() {
+    var props     = this.props
+      , className = classNames(props.className, 'twitter-handle')
+      , username  = props.username
+      , link      = `https://twitter.com/${username}`
+
     return (
-      <a className='card-owner' href={`https://twitter.com/${this.props.user}`}>
-        @{this.props.user}
+      <a className={className} href={link}>
+        @{this.props.username}
       </a>
     )
   }
