@@ -20,7 +20,7 @@ const Header = React.createClass({
             #ElixirFriends
           </h1>
           <h2 className="header-tagline">
-            Create and share together
+            Create and share together.
           </h2>
         </div>
       </header>

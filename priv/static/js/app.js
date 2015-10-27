@@ -17515,7 +17515,7 @@ var Header = React.createClass({
         React.createElement(
           "h2",
           { className: "header-tagline" },
-          "Create and share together"
+          "Create and share together."
         )
       )
     );
