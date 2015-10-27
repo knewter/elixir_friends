@@ -135,11 +135,11 @@ a {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  color: #d5dae6;
-  background-color: #3c3752;
-  text-align: center;
   padding: 4rem;
   margin-top: 5rem;
+  color: #d5dae6;
+  text-align: center;
+  background-color: #3c3752;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
@@ -201,7 +201,7 @@ a {
   margin-bottom: 1.5rem;
   text-align: left;
   border: 1px solid rgba(215, 216, 224, 0.47);
-  border-bottom: 3px solid rgba(193, 193, 193, 0.47);
+  border-bottom: 2px solid rgba(193, 193, 193, 0.47);
   border-radius: 0.25rem; }
 
 /* line 13, /Users/keathley/Development/elixir_friends/web/static/css/components/_card.scss */
