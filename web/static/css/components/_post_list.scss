@@ -1,5 +1,5 @@
 .post-list {
-  max-width: $screen-xl;
+  max-width: $max-width;
   padding-right: 1rem;
   padding-left: 1rem;
   margin-top: 3rem;
@@ -10,6 +10,10 @@
   column-gap: $gutter;
   column-count: 1;
 
+  @media screen and (min-width: $screen-sm) {
+    column-count: 2;
+  }
+
   @media screen and (min-width: $screen-md) {
     padding-right: 2rem;
     padding-left: 2rem;
@@ -19,5 +23,6 @@
 
   @media screen and (min-width: $screen-lg) {
     column-count: 3;
+    margin-top: 4rem;
   }
 }

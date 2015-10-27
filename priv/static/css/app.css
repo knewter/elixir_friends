@@ -26,16 +26,16 @@ body {
 /* line 3, /Users/keathley/Development/elixir_friends/web/static/css/base/_fonts.scss */
 html {
   font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-size: 15px; }
-  @media (min-width: 42rem) {
+  font-size: 14px; }
+  @media (min-width: 58rem) {
     /* line 3, /Users/keathley/Development/elixir_friends/web/static/css/base/_fonts.scss */
     html {
-      font-size: 16.5px; } }
+      font-size: 15.4px; } }
 
 /* line 12, /Users/keathley/Development/elixir_friends/web/static/css/base/_fonts.scss */
 body {
   line-height: 1.7;
-  color: #252525;
+  color: #222;
   -webkit-font-feature-settings: "kern", "liga", "pnum";
           font-feature-settings: "kern", "liga", "pnum";
   text-rendering: optimizeLegibility;
@@ -72,8 +72,8 @@ blockquote {
 /* line 35, /Users/keathley/Development/elixir_friends/web/static/css/base/_fonts.scss */
 p {
   margin: 0;
-  font-size: 0.9rem;
-  font-weight: 400; }
+  font-size: 14px;
+  font-weight: normal; }
 
 /* line 44, /Users/keathley/Development/elixir_friends/web/static/css/base/_fonts.scss */
 p + h1,
@@ -92,43 +92,43 @@ a {
   width: 100%;
   color: #fff;
   text-align: center;
-  background-color: #532171;
-  border-bottom: 6px solid #a683b3; }
-  @media screen and (min-width: 27rem) {
+  background-color: #3c3752; }
+  @media screen and (min-width: 42rem) {
     /* line 1, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
     .header {
       text-align: left; } }
 
-/* line 13, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
+/* line 12, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
 .header-container {
-  max-width: 60rem;
+  max-width: 62rem;
   padding-top: 2rem;
   padding-right: 1rem;
   padding-bottom: 2rem;
   padding-left: 1rem;
   margin-right: auto;
   margin-left: auto; }
-  @media screen and (min-width: 27rem) {
-    /* line 13, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
+  @media screen and (min-width: 42rem) {
+    /* line 12, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
     .header-container {
       padding-top: 3rem;
       padding-right: 2rem;
       padding-bottom: 3rem;
       padding-left: 2rem; } }
 
-/* line 30, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
+/* line 29, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
 .header-title {
   margin-top: 0; }
 
-/* line 34, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
+/* line 33, /Users/keathley/Development/elixir_friends/web/static/css/components/_header.scss */
 .header-tagline {
   margin-top: 0;
   font-size: 1.5rem;
-  font-weight: 300; }
+  font-weight: 300;
+  color: #d5dae6; }
 
 /* line 1, /Users/keathley/Development/elixir_friends/web/static/css/components/_post_list.scss */
 .post-list {
-  max-width: 60rem;
+  max-width: 62rem;
   padding-right: 1rem;
   padding-left: 1rem;
   margin-top: 3rem;
@@ -141,7 +141,13 @@ a {
   -webkit-column-count: 1;
      -moz-column-count: 1;
           column-count: 1; }
-  @media screen and (min-width: 27rem) {
+  @media screen and (min-width: 32rem) {
+    /* line 1, /Users/keathley/Development/elixir_friends/web/static/css/components/_post_list.scss */
+    .post-list {
+      -webkit-column-count: 2;
+         -moz-column-count: 2;
+              column-count: 2; } }
+  @media screen and (min-width: 42rem) {
     /* line 1, /Users/keathley/Development/elixir_friends/web/static/css/components/_post_list.scss */
     .post-list {
       padding-right: 2rem;
@@ -150,12 +156,13 @@ a {
       -webkit-column-count: 2;
          -moz-column-count: 2;
               column-count: 2; } }
-  @media screen and (min-width: 42rem) {
+  @media screen and (min-width: 58rem) {
     /* line 1, /Users/keathley/Development/elixir_friends/web/static/css/components/_post_list.scss */
     .post-list {
       -webkit-column-count: 3;
          -moz-column-count: 3;
-              column-count: 3; } }
+              column-count: 3;
+      margin-top: 4rem; } }
 
 /* line 1, /Users/keathley/Development/elixir_friends/web/static/css/components/_card.scss */
 .card {

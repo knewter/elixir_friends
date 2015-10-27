@@ -3,7 +3,6 @@
   color: #fff;
   text-align: center;
   background-color: $dark-purple;
-  border-bottom: 6px solid $light-purple;
 
   @media screen and (min-width: $screen-md) {
     text-align: left;
@@ -11,7 +10,7 @@
 }
 
 .header-container {
-  max-width: $screen-xl;
+  max-width: $max-width;
   padding-top: 2rem;
   padding-right: 1rem;
   padding-bottom: 2rem;
@@ -35,4 +34,5 @@
   margin-top: 0;
   font-size: 1.5rem;
   font-weight: 300;
+  color: #d5dae6;
 }

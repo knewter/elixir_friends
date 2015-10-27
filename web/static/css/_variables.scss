@@ -1,22 +1,23 @@
 /* Breaks */
-$screen-xl: 60rem;
-$screen-lg: 42rem;
-$screen-md: 27rem;
+$screen-lg: 58rem;
+$screen-md: 42rem;
+$screen-sm: 32rem;
 
 /* Colors */
 $background-color: #fafafa;
 $purple: #8849ae;
-$dark-purple: #532171;
+$dark-purple: #3c3752;
 $light-purple: #a683b3;
 
 /* Typography */
-$base-font-size: 15px;
+$base-font-size: 14px;
 $base-font-family: 'Lato', Helvetica, Arial, sans-serif;
 $base-line-height: 1.7;
-$base-color: #252525;
+$base-color: #222;
 
 /* Links */
 $link-color: #df2050;
 
 // Sizing
 $gutter: 1.5rem;
+$max-width: 62rem;
