@@ -17577,6 +17577,12 @@ var Post = React.createClass({
     return React.createElement(
       "div",
       { className: "card" },
+      React.createElement(
+        "div",
+        { className: "card-meta" },
+        React.createElement(TwitterHandle, { user: this.props.username }),
+        React.createElement(PostedAt, { date: this.props.insertedAt })
+      ),
       React.createElement("img", { className: "card-image", src: this.props.imageUrl }),
       React.createElement(
         "div",
@@ -17585,17 +17591,6 @@ var Post = React.createClass({
           "p",
           { className: "card-text" },
           this.props.content
-        ),
-        React.createElement(
-          "div",
-          { className: "card-meta" },
-          React.createElement(TwitterHandle, { user: this.props.username }),
-          React.createElement(
-            "span",
-            null,
-            " - "
-          ),
-          React.createElement(PostedAt, { date: this.props.insertedAt })
         )
       )
     );
@@ -17612,7 +17607,7 @@ var TwitterHandle = React.createClass({
   render: function render() {
     return React.createElement(
       "a",
-      { href: "https://twitter.com/" + this.props.user },
+      { className: "card-owner", href: "https://twitter.com/" + this.props.user },
       "@",
       this.props.user
     );
@@ -17631,7 +17626,7 @@ var PostedAt = React.createClass({
 
     return React.createElement(
       "span",
-      { className: "small" },
+      { className: "card-date" },
       timeSince
     );
   }

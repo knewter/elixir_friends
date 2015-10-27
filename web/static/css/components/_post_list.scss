@@ -2,23 +2,22 @@
   max-width: $screen-xl;
   padding-right: 1rem;
   padding-left: 1rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
 
-  -webkit-column-gap: 0.5rem;
-  -webkit-column-count: 1;
+  column-gap: $gutter;
+  column-count: 1;
 
   @media screen and (min-width: $screen-md) {
     padding-right: 2rem;
     padding-left: 2rem;
     text-align: left;
-    -webkit-column-count: 2;
+    column-count: 2;
   }
 
   @media screen and (min-width: $screen-lg) {
-    -webkit-column-gap: 1.25rem;
-    -webkit-column-count: 3;
+    column-count: 3;
   }
 }

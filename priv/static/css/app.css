@@ -26,17 +26,18 @@ body {
 /* line 3, /Users/keathley/Development/elixir_friends/web/static/css/base/_fonts.scss */
 html {
   font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-size: 16px; }
+  font-size: 15px; }
   @media (min-width: 42rem) {
     /* line 3, /Users/keathley/Development/elixir_friends/web/static/css/base/_fonts.scss */
     html {
-      font-size: 17.6px; } }
+      font-size: 16.5px; } }
 
 /* line 12, /Users/keathley/Development/elixir_friends/web/static/css/base/_fonts.scss */
 body {
   line-height: 1.7;
-  color: #6b676f;
-  font-feature-settings: "kern", "liga", "pnum";
+  color: #252525;
+  -webkit-font-feature-settings: "kern", "liga", "pnum";
+          font-feature-settings: "kern", "liga", "pnum";
   text-rendering: optimizeLegibility;
   font-smoothing: antialiased; }
 
@@ -70,7 +71,7 @@ blockquote {
 
 /* line 35, /Users/keathley/Development/elixir_friends/web/static/css/base/_fonts.scss */
 p {
-  margin: 0 0 1.25rem;
+  margin: 0;
   font-size: 0.9rem;
   font-weight: 400; }
 
@@ -130,24 +131,31 @@ a {
   max-width: 60rem;
   padding-right: 1rem;
   padding-left: 1rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
-  -webkit-column-gap: 0.5rem;
-  -webkit-column-count: 1; }
+  -webkit-column-gap: 1.5rem;
+     -moz-column-gap: 1.5rem;
+          column-gap: 1.5rem;
+  -webkit-column-count: 1;
+     -moz-column-count: 1;
+          column-count: 1; }
   @media screen and (min-width: 27rem) {
     /* line 1, /Users/keathley/Development/elixir_friends/web/static/css/components/_post_list.scss */
     .post-list {
       padding-right: 2rem;
       padding-left: 2rem;
       text-align: left;
-      -webkit-column-count: 2; } }
+      -webkit-column-count: 2;
+         -moz-column-count: 2;
+              column-count: 2; } }
   @media screen and (min-width: 42rem) {
     /* line 1, /Users/keathley/Development/elixir_friends/web/static/css/components/_post_list.scss */
     .post-list {
-      -webkit-column-gap: 1.25rem;
-      -webkit-column-count: 3; } }
+      -webkit-column-count: 3;
+         -moz-column-count: 3;
+              column-count: 3; } }
 
 /* line 1, /Users/keathley/Development/elixir_friends/web/static/css/components/_card.scss */
 .card {
@@ -155,33 +163,60 @@ a {
   display: inline-block;
   width: 100%;
   max-width: 24rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   text-align: left;
-  border: 1px solid rgba(221, 221, 221, 0.47);
-  border-bottom-width: 3px;
+  border: 1px solid rgba(215, 216, 224, 0.47);
+  border-bottom: 3px solid rgba(193, 193, 193, 0.47);
   border-radius: 0.25rem; }
 
 /* line 13, /Users/keathley/Development/elixir_friends/web/static/css/components/_card.scss */
 .card-image {
   display: block;
   max-width: 100%;
-  height: auto;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem; }
+  height: auto; }
 
-/* line 21, /Users/keathley/Development/elixir_friends/web/static/css/components/_card.scss */
+/* line 19, /Users/keathley/Development/elixir_friends/web/static/css/components/_card.scss */
 .card-content {
-  padding: 1.25rem;
+  padding-top: 0.8rem;
+  padding-right: 1.2rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.2rem;
   margin-top: 0;
   background-color: #fff;
+  border-top: 1px solid rgba(239, 239, 239, 0.86);
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem; }
 
-/* line 29, /Users/keathley/Development/elixir_friends/web/static/css/components/_card.scss */
+/* line 31, /Users/keathley/Development/elixir_friends/web/static/css/components/_card.scss */
 .card-meta {
-  font-size: 0.8rem;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.75rem;
+  font-size: 0.9rem;
   font-weight: 800;
-  color: #8f8f8f; }
+  color: #8f8f8f;
+  background-color: #fff;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+
+/* line 43, /Users/keathley/Development/elixir_friends/web/static/css/components/_card.scss */
+.card-owner {
+  -webkit-flex-grow: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3; }
+
+/* line 47, /Users/keathley/Development/elixir_friends/web/static/css/components/_card.scss */
+.card-date {
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 0.9rem;
+  font-weight: 200;
+  text-align: right; }
 
 
 /*# sourceMappingURL=app.css.map*/

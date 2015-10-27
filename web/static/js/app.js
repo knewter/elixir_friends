@@ -74,16 +74,15 @@ let Post = React.createClass({
   render() {
     return(
       <div className="card">
+        <div className='card-meta'>
+          <TwitterHandle user={this.props.username} />
+          <PostedAt date={this.props.insertedAt} />
+        </div>
         <img className="card-image" src={this.props.imageUrl} />
         <div className="card-content">
           <p className="card-text">
             {this.props.content}
           </p>
-          <div className='card-meta'>
-            <TwitterHandle user={this.props.username} />
-            <span> - </span>
-            <PostedAt date={this.props.insertedAt} />
-          </div>
         </div>
       </div>
     )
@@ -97,7 +96,7 @@ const TwitterHandle = React.createClass({
 
   render() {
     return (
-      <a href={`https://twitter.com/${this.props.user}`}>
+      <a className='card-owner' href={`https://twitter.com/${this.props.user}`}>
         @{this.props.user}
       </a>
     )
@@ -113,7 +112,7 @@ const PostedAt = React.createClass({
     let timeSince = moment(this.props.date).fromNow()
 
     return (
-      <span className="small">
+      <span className="card-date">
         {timeSince}
       </span>
     )
