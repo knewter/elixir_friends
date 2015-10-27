@@ -34,7 +34,7 @@ const Footer = React.createClass({
     return (
       <footer className="footer">
         <p>
-          Made by <TwitterLink username='knewter' /> and <TwitterLink username='ChrisKeathley' />.
+          Made by <TwitterLink username='elixirsips' />, <TwitterLink username='knewter' /> and <TwitterLink username='ChrisKeathley' />.
           <span> </span>
           Comments, Pull Requests, and Issues are welcome on <a href="https://github.com/knewter/elixir_friends">Github.</a>
         </p>

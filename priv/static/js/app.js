@@ -17582,6 +17582,8 @@ var Footer = React.createClass({
         "p",
         null,
         "Made by ",
+        React.createElement(TwitterLink, { username: "elixirsips" }),
+        ", ",
         React.createElement(TwitterLink, { username: "knewter" }),
         " and ",
         React.createElement(TwitterLink, { username: "ChrisKeathley" }),
