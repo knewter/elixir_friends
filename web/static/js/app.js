@@ -1,4 +1,12 @@
-import {Socket} from "deps/phoenix/web/static/js/phoenix"
+import {Socket} from "phoenix"
+import $ from 'jquery'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import classNames from 'classnames'
+import moment from 'moment'
+
+require('css/app')
 
 let App = React.createClass({
   render() {
@@ -68,6 +76,11 @@ let PostList = React.createClass({
     channel.on("new:post", post => {
       this.injectNewPost(post)
     })
+
+    function correctDate(post) {
+      post.inserted_at = post.inserted_at || Date.now().toString()
+      return post
+    }
   },
   injectNewPost(post) {
     this.setState({
@@ -75,11 +88,20 @@ let PostList = React.createClass({
     })
   },
   render() {
+    let posts = this.state.posts.map((post) => {
+      return (
+        <Post imageUrl={post.image_url}
+          key={post.id+post.inserted_at+post.content}
+          username={post.username}
+          insertedAt={post.inserted_at}
+          content={post.content} />
+      )
+    })
     return(
       <div className="post-list">
-        {this.state.posts.map(function(post){
-          return <Post imageUrl={post.image_url} username={post.username} insertedAt={post.inserted_at} content={post.content} />
-        })}
+        <ReactCSSTransitionGroup transitionName='post' transitionEnterTimeout={500} transitionLeaveTimeout={300} transitionAppear={true} transitionAppearTimeout={500}>
+          {posts}
+        </ReactCSSTransitionGroup>
       </div>
     )
   }
@@ -125,11 +147,11 @@ const TwitterLink = React.createClass({
 
 const PostedAt = React.createClass({
   propTypes: {
-    date: React.PropTypes.string.isRequired
+    date: React.PropTypes.string
   },
 
   render() {
-    let timeSince = moment(this.props.date).fromNow()
+    let timeSince = (this.props.date ? moment(this.props.date) : moment()).fromNow()
 
     return (
       <span className="card-date">
@@ -141,7 +163,7 @@ const PostedAt = React.createClass({
 
 window.onload = () => {
   let element = document.getElementById("app")
-  React.render(<App />, element)
+  ReactDOM.render(<App />, element)
 }
 
 export default App

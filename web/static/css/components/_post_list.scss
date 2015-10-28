@@ -26,3 +26,21 @@
     margin-top: 4rem;
   }
 }
+
+.post-enter { opacity: 0.01; }
+.post-enter.post-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.post-leave { opacity: 1; }
+.post-leave.post-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.post-appear { opacity: 0.01; }
+.post-appear.post-appear-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
