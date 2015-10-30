@@ -92,6 +92,7 @@ let PostList = React.createClass({
     let posts = this.state.posts.map((post) => {
       return (
         <Post imageUrl={post.image_url}
+          source_url={post.source_url}
           key={post.id+post.inserted_at+post.content}
           username={post.username}
           insertedAt={post.inserted_at}
@@ -116,7 +117,9 @@ let Post = React.createClass({
           <TwitterLink username={this.props.username} />
           <PostedAt date={this.props.insertedAt} />
         </div>
-        <img className="card-image" src={this.props.imageUrl} />
+        <a href={this.props.source_url}>
+          <img className="card-image" src={this.props.imageUrl} />
+        </a>
         <div className="card-content">
           <p className="card-text">
             {this.props.content}
