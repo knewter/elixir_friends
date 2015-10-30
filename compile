@@ -1,0 +1,4 @@
+#!/bin/bash
+info "Building Phoenix static assets"
+webpack
+mix phoenix.digest
