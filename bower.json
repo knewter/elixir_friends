@@ -14,6 +14,8 @@
     "tests"
   ],
   "dependencies": {
-    "react": "~0.13.3"
+    "react": "~0.13.3",
+    "moment": "~2.10.6",
+    "classnames": "~2.2.0"
   }
 }

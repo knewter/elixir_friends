@@ -1,3 +1,5 @@
-<h2>Look at all these people!  They came together because of <%= link "Elixir!", to: "http://www.elixir-lang.org" %></h2>
+<script>
+  window.preloadData = <%= raw @posts_page %>
+</script>
 
 <div id="app"></div>

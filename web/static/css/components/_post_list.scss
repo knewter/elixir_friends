@@ -1,0 +1,46 @@
+.post-list {
+  max-width: $max-width;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-top: 3rem;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+
+  column-gap: $gutter;
+  column-count: 1;
+
+  @media screen and (min-width: $screen-sm) {
+    column-count: 2;
+  }
+
+  @media screen and (min-width: $screen-md) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    text-align: left;
+    column-count: 2;
+  }
+
+  @media screen and (min-width: $screen-lg) {
+    column-count: 3;
+    margin-top: 4rem;
+  }
+}
+
+.post-enter { opacity: 0.01; }
+.post-enter.post-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.post-leave { opacity: 1; }
+.post-leave.post-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.post-appear { opacity: 0.01; }
+.post-appear.post-appear-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}

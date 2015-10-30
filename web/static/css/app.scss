@@ -1,0 +1,12 @@
+@import "~normalize.css/normalize.css";
+
+@import "variables";
+
+@import "base/sizing";
+@import "base/body";
+@import "base/fonts";
+
+@import "components/header";
+@import "components/footer";
+@import "components/post_list";
+@import "components/card";

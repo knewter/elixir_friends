@@ -1,0 +1,52 @@
+.card {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 24rem;
+  margin-bottom: $gutter;
+  text-align: left;
+  border: 1px solid rgba(215, 216, 224, 0.47);
+  border-bottom: 2px solid rgba(193, 193, 193, 0.47);
+  border-radius: 0.25rem;
+}
+
+.card-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding-top: 0.8rem;
+  padding-right: 1.2rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.2rem;
+  margin-top: 0;
+  background-color: #fff;
+  border-top: 1px solid rgba(239, 239, 239, 0.86);
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.card-meta {
+  display: flex;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #8f8f8f;
+  background-color: #fff;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  justify-content: flex-start;
+}
+
+.card-owner {
+  flex-grow: 3;
+}
+
+.card-date {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  font-weight: 200;
+  text-align: right;
+}
