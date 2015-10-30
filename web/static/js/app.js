@@ -1,5 +1,4 @@
 import {Socket} from "phoenix"
-import $ from 'jquery'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
@@ -66,12 +65,6 @@ let PostList = React.createClass({
     return { posts: this.props.preloadedPosts }
   },
   componentDidMount() {
-    $.get(this.props.source, result => {
-      result = JSON.parse(result)
-      this.setState({
-        posts: result.entries
-      })
-    })
     this.subscribeToNewPosts()
   },
   subscribeToNewPosts() {
