@@ -14,7 +14,7 @@ use Mix.Config
 config :elixir_friends, ElixirFriends.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [host: "elixirfriends.com"],
-  check_origin: ["http://elixirfriends.com", "http://www.elixirfriends.com"]
+  check_origin: ["http://elixirfriends.com", "http://www.elixirfriends.com"],
   cache_static_manifest: "priv/static/manifest.json"
 
 # ## SSL Support
