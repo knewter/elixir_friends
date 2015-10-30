@@ -10,6 +10,7 @@ defmodule ElixirFriends.PostController do
     posts_page = Post
     |> order_by([p], desc: p.inserted_at)
     |> ElixirFriends.Repo.paginate(page: params["page"])
+    |> Poison.encode!
 
     render(conn, "index.html", posts_page: posts_page)
   end

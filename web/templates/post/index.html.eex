@@ -1,1 +1,5 @@
+<script>
+  window.preloadData = <%= raw @posts_page %>
+</script>
+
 <div id="app"></div>

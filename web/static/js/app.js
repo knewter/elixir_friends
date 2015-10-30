@@ -9,11 +9,15 @@ import moment from 'moment'
 require('css/app')
 
 let App = React.createClass({
+  propTypes: {
+    preloadedPosts: React.PropTypes.array
+  },
+
   render() {
     return (
       <div>
         <Header />
-        <PostList source="/api/posts" />
+        <PostList {...this.props} source="/api/posts" />
         <Footer />
       </div>
     )
@@ -52,10 +56,14 @@ const Footer = React.createClass({
 })
 
 let PostList = React.createClass({
+  propTypes: {
+    preloadedPosts: React.PropTypes.array
+  },
+  getDefaultProps() {
+    return { preloadedPosts: [] }
+  },
   getInitialState() {
-    return {
-      posts: []
-    }
+    return { posts: this.props.preloadedPosts }
   },
   componentDidMount() {
     $.get(this.props.source, result => {
@@ -163,7 +171,8 @@ const PostedAt = React.createClass({
 
 window.onload = () => {
   let element = document.getElementById("app")
-  ReactDOM.render(<App />, element)
+  ReactDOM.render(
+    <App preloadedPosts={window.preloadData.entries} />, element)
 }
 
 export default App
