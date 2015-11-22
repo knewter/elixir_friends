@@ -4,7 +4,7 @@ use Mix.Config
 # you can enable the server option below.
 config :elixir_friends, ElixirFriends.Endpoint,
   http: [port: 4001],
-  server: false
+  server: true
 
 # Print only warnings and errors during test
 config :logger, level: :warn
@@ -17,3 +17,6 @@ config :elixir_friends, ElixirFriends.Repo,
   password: System.get_env("DATABASE_POSTGRESQL_PASSWORD") || "postgres",
   database: "elixir_friends_test",
   pool_size: 1 # Use a single connection for transactional tests
+
+# Configure hound for integration tests
+config :hound, driver: "chrome_driver"

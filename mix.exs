@@ -48,7 +48,8 @@ defmodule ElixirFriends.Mixfile do
       {:extwitter, "~> 0.5.1"},
       {:oauth, github: "tim/erlang-oauth"},
       {:scrivener, "~> 0.12.0"},
-      {:honeybadger, "~> 0.3"}
+      {:honeybadger, "~> 0.3"},
+      {:hound, "~> 0.7.4"}
     ]
   end
 end
