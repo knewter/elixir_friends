@@ -26,7 +26,9 @@ defmodule Integration.PostsTest do
   test "new posts are injected onto the page" do
     navigate_to "http://localhost:4001/"
     this_post = %Post{ @post | content: "this post"}
+    :timer.sleep 500
     ImageTweetStreamer.store_post(this_post)
+    :timer.sleep 500
     assert page_source =~ this_post.content
   end
 end
