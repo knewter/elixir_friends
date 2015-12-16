@@ -2,19 +2,18 @@ defmodule ElixirFriends do
   use Application
   import Supervisor.Spec
 
-  @term "elixirfriends"
-
   # See http://elixir-lang.org/docs/stable/elixir/Application.html
   # for more information on OTP Applications
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
+    term = Application.get_env(:elixir_friends, :term)
 
     children = [
       # Start the endpoint when the application starts
       supervisor(ElixirFriends.Endpoint, []),
       # Start the Ecto repository
       worker(ElixirFriends.Repo, []),
-      worker(Task, [fn -> ElixirFriends.ImageTweetStreamer.stream(@term) |> Enum.to_list end])
+      worker(Task, [fn -> ElixirFriends.ImageTweetStreamer.stream(term) |> Enum.to_list end])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
