@@ -1,4 +1,4 @@
-%{"beaker": {:git, "https://github.com/knewter/beaker.git", "6ff89ab8271142d1329dc9b14211f3dee00c391f", []},
+%{"beaker": {:git, "https://github.com/knewter/beaker.git", "6ba886fee49ed0b6bc51ccc62244ec6be53621fe", []},
   "certifi": {:hex, :certifi, "0.1.1"},
   "combine": {:hex, :combine, "0.5.3"},
   "cowboy": {:hex, :cowboy, "1.0.4"},
