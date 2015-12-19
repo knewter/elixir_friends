@@ -1,6 +1,8 @@
 defmodule ElixirFriends.Endpoint do
   use Phoenix.Endpoint, otp_app: :elixir_friends
 
+  plug Beaker.Integrations.Phoenix
+
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest

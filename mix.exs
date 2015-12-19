@@ -25,7 +25,8 @@ defmodule ElixirFriends.Mixfile do
         :logger,
         :phoenix_ecto,
         :postgrex,
-        :honeybadger
+        :honeybadger,
+        :beaker
       ]
     ]
   end
@@ -49,7 +50,8 @@ defmodule ElixirFriends.Mixfile do
       {:oauth, github: "tim/erlang-oauth"},
       {:scrivener, "~> 0.12.0"},
       {:honeybadger, "~> 0.3"},
-      {:hound, "~> 0.7.4"}
+      {:hound, "~> 0.7.4"},
+      {:beaker, ">= 1.1.1"}
     ]
   end
 end
