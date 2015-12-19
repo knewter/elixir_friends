@@ -23,7 +23,7 @@ config :elixir_friends, ElixirFriends.Endpoint,
     ]
   ]
 
-config :elixir_friends, :term, "nintendo"
+config :elixir_friends, :term, "cat"
 
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
