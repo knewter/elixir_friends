@@ -51,7 +51,7 @@ defmodule ElixirFriends.Mixfile do
       {:scrivener, "~> 0.12.0"},
       {:honeybadger, "~> 0.3"},
       {:hound, "~> 0.7.4"},
-      {:beaker, ">= 1.1.1"}
+      {:beaker, github: "knewter/beaker"}
     ]
   end
 end
