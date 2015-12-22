@@ -22,7 +22,7 @@ defmodule ElixirFriends.ChannelCase do
 
       # Alias the data repository and import query/model functions
       alias ElixirFriends.Repo
-      import Ecto.Model
+      import Ecto
       import Ecto.Query, only: [from: 2]
 
 

@@ -12,7 +12,7 @@ defmodule ElixirFriends do
       # Start the endpoint when the application starts
       supervisor(ElixirFriends.Endpoint, []),
       # Start the Ecto repository
-      worker(ElixirFriends.Repo, []),
+      supervisor(ElixirFriends.Repo, []),
       worker(Task, [fn -> ElixirFriends.ImageTweetStreamer.stream(term) |> Enum.to_list end])
     ]
 

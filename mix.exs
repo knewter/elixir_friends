@@ -6,7 +6,7 @@ defmodule ElixirFriends.Mixfile do
       version: "0.0.1",
       elixir: "~> 1.0",
       elixirc_paths: elixirc_paths(Mix.env),
-      compilers: [:phoenix] ++ Mix.compilers,
+      compilers: [:phoenix, :gettext] ++ Mix.compilers,
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps]
@@ -25,7 +25,8 @@ defmodule ElixirFriends.Mixfile do
         :logger,
         :phoenix_ecto,
         :postgrex,
-        :honeybadger
+        :honeybadger,
+        :gettext
       ]
     ]
   end
@@ -50,7 +51,8 @@ defmodule ElixirFriends.Mixfile do
       {:scrivener, "~> 1.1.1"},
       {:honeybadger, "~> 0.3"},
       {:hound, "~> 0.7.4"},
-      {:credo, "~> 0.2", only: [:dev, :test]}
+      {:credo, "~> 0.2", only: [:dev, :test]},
+      {:gettext, "~> 0.9"}
     ]
   end
 end
