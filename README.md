@@ -13,26 +13,6 @@ Now you can visit `localhost:4000` from your browser.
 
 This uses [the phoenix static buildpack.](https://github.com/gjaldon/phoenix-static-buildpack)
 
-## Dependency awkwardness
-
-I added Beaker, which doesn't build some of its integrations if certain
-dependencies aren't yet built when it compiles.  Consequently, you need to force
-compilation in a particular order.  It's kind of awful and I'd love to figure
-out how to fix it.  Here's what you can do for now:
-
-```sh
-MIX_ENV=test mix deps.compile plug
-MIX_ENV=test mix deps.compile poison
-MIX_ENV=test mix deps.compile poolboy
-MIX_ENV=test mix deps.compile decimal
-MIX_ENV=test mix deps.compile postgrex
-MIX_ENV=test mix deps.compile ecto
-MIX_ENV=test mix deps.compile phoenix
-MIX_ENV=test mix test
-```
-
-(Obviously similar stuff for running in dev)
-
 ## ExTwitter.Model.Tweet structure
 
 We are going to be streaming ExTwitter.Model.Tweets into our database.  The

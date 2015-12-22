@@ -2,8 +2,6 @@ defmodule ElixirFriends.Router do
   use ElixirFriends.Web, :router
   use Honeybadger.Plug
 
-  forward "/beaker", Beaker.Web
-
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
