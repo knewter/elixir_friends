@@ -27,4 +27,13 @@ defmodule ElixirFriends.Router do
 
     resources "/posts", API.PostController, only: [:index]
   end
+
+  scope "/auth", ElixirFriends do
+    pipe_through :browser
+
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
+    post "/:provider/callback", AuthController, :callback
+    delete "/logout", AuthController, :delete
+  end
 end

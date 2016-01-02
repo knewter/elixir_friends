@@ -29,4 +29,6 @@
   "scrivener": {:hex, :scrivener, "1.1.1"},
   "ssl_verify_hostname": {:hex, :ssl_verify_hostname, "1.0.5"},
   "timex": {:hex, :timex, "0.19.5"},
-  "tzdata": {:hex, :tzdata, "0.5.5"}}
+  "tzdata": {:hex, :tzdata, "0.5.5"},
+  "ueberauth": {:hex, :ueberauth, "0.2.0"},
+  "ueberauth_twitter": {:hex, :ueberauth_twitter, "0.2.2"}}

@@ -26,7 +26,9 @@ defmodule ElixirFriends.Mixfile do
         :phoenix_ecto,
         :postgrex,
         :honeybadger,
-        :gettext
+        :gettext,
+        :ueberauth,
+        :ueberauth_twitter
       ]
     ]
   end
@@ -52,7 +54,9 @@ defmodule ElixirFriends.Mixfile do
       {:honeybadger, "~> 0.3"},
       {:hound, "~> 0.7.4"},
       {:credo, "~> 0.2", only: [:dev, :test]},
-      {:gettext, "~> 0.9"}
+      {:gettext, "~> 0.9"},
+      {:ueberauth, "~> 0.2"},
+      {:ueberauth_twitter, "~> 0.2"}
     ]
   end
 end
