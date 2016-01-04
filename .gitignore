@@ -27,3 +27,4 @@ erl_crash.dump
 #
 # Putting bower_components in here just because I don't want to deal with buildpacks now, sorry future-me
 # bower_components
+web/controllers/README.md

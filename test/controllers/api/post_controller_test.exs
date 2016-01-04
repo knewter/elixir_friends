@@ -16,8 +16,6 @@ defmodule ElixirFriends.API.PostControllerTest do
     }
     inserted_post = post |> ElixirFriends.Repo.insert!
 
-    conn = get conn, "/api/posts"
-
     expected_response = %{
       total_pages: 1,
       total_entries: 1,
@@ -25,6 +23,11 @@ defmodule ElixirFriends.API.PostControllerTest do
       page_number: 1,
       entries: [inserted_post]
     } |> Poison.encode!
+
+    conn =
+      conn
+      |> get("/api/posts")
+      |> doc
 
     assert json_response(conn, 200) == expected_response
   end

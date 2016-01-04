@@ -28,6 +28,8 @@ defmodule ElixirFriends.ConnCase do
       # Import URL helpers from the router
       import ElixirFriends.Router.Helpers
 
+      import Bureaucrat.Helpers
+
       # The default endpoint for testing
       @endpoint ElixirFriends.Endpoint
     end

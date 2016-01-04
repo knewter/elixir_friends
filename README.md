@@ -70,6 +70,14 @@ Channels by live-updating the view.  The API supports pagination but since
 transitioning to a React and live-updating frontend the app doesn't presently
 have pagination links.
 
+## Generate API Documentation
+
+To generate API documentation, just run the test suite with `DOC=1` set:
+
+```sh
+DOC=1 mix test
+```
+
 ## TODO
 
 - [x] Convince someone to contribute a pretty UI (Thanks [@ChrisKeathley!](http://twitter.com/ChrisKeathley))

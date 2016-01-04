@@ -52,7 +52,8 @@ defmodule ElixirFriends.Mixfile do
       {:honeybadger, "~> 0.3"},
       {:hound, "~> 0.7.4"},
       {:credo, "~> 0.2", only: [:dev, :test]},
-      {:gettext, "~> 0.9"}
+      {:gettext, "~> 0.9"},
+      {:bureaucrat, "~> 0.0.4", only: [:test]}
     ]
   end
 end
