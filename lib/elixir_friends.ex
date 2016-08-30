@@ -13,7 +13,7 @@ defmodule ElixirFriends do
       supervisor(ElixirFriends.Endpoint, []),
       # Start the Ecto repository
       supervisor(ElixirFriends.Repo, []),
-      worker(Task, [fn -> ElixirFriends.ImageTweetStreamer.stream(term) |> Enum.to_list end])
+      worker(Task, [fn -> ElixirFriends.ImageTweetStreamer.stream(term) |> Stream.run end])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
